@@ -4,6 +4,7 @@ export const profile = {
   email: 'anas.addanfor@gmail.com',
   cv: 'assets/Anas_Eddanfor_CV.pdf',
   photo: 'assets/profile.png',
+  heroBg: 'assets/hero-bg.jpg',
   roles: ['Control & Automation', 'Data Center', 'Graphic Design'],
   intro:
     'I build reliable systems, from industrial robots and control loops to virtualized data centers, and I design the visuals that explain them.',

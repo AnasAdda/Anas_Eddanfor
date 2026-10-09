@@ -6,6 +6,7 @@ export default function Hero() {
   const last = rest.pop();
   return (
     <section className="hero" id="top">
+      <div className="hero-bg" aria-hidden="true" style={{ backgroundImage: `url(${profile.heroBg})` }} />
       <div className="grid-bg" aria-hidden="true" />
       <div className="glow" aria-hidden="true" />
       <div className="wrap hero-inner">

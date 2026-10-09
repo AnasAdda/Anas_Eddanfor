@@ -14,6 +14,7 @@
   --glow: rgba(58, 57, 160, 0.14);
   --shadow: 0 1px 2px rgba(34,33,97,.04), 0 12px 32px -12px rgba(34,33,97,.12);
   --ok: #18a66a;
+  --hero-bg-opacity: .1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,6 +31,7 @@
     --grid: rgba(185, 188, 255, 0.06);
     --glow: rgba(120, 120, 255, 0.18);
     --shadow: none;
+    --hero-bg-opacity: .08;
   }
 }
 :root[data-theme="dark"] {
@@ -45,6 +47,7 @@
   --grid: rgba(185, 188, 255, 0.06);
   --glow: rgba(120, 120, 255, 0.18);
   --shadow: none;
+  --hero-bg-opacity: .08;
 }
 
 * { box-sizing: border-box; }
@@ -115,6 +118,13 @@ img { max-width: 100%; display: block; }
 
 /* Hero */
 .hero { position: relative; overflow: hidden; padding: 88px 0 48px; border-bottom: 1px solid var(--border); background: var(--bg-2); }
+.hero-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background-size: cover; background-position: center 35%;
+  opacity: var(--hero-bg-opacity, .1); filter: saturate(.6) blur(1.5px);
+  mask-image: linear-gradient(to bottom, #000 55%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent);
+}
 .glow {
   position: absolute; width: 620px; height: 620px; right: -120px; top: -180px; border-radius: 50%;
   background: radial-gradient(circle, var(--glow), transparent 65%); pointer-events: none;
