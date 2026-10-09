@@ -67,13 +67,13 @@ export default function App() {
         </Section>
 
         <Section id="projects" index="03" title="Projects">
-          <div className="timeline projects">
+          <div className="timeline">
             {projects.map(p => (
               <article key={p.name} className="card">
                 <p className="label">{p.org}</p>
                 <h3>{p.name}</h3>
                 <p className="muted">{p.text}</p>
-                {p.url && <a className="project-link" href={p.url} target="_blank" rel="noopener noreferrer">{p.url.replace(/^https:\/\/|\/$/g, '')} <Icon name="external" size={14} /></a>}
+                {p.url && <a className="project-link" href={p.url} target="_blank" rel="noopener noreferrer">{p.url.includes('github.com') ? 'View on GitHub' : p.url.replace(/^https:\/\/|\/$/g, '')} <Icon name="external" size={14} /></a>}
               </article>
             ))}
           </div>

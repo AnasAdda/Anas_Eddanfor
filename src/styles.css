@@ -217,7 +217,6 @@ button, input, textarea, select { font-family: inherit; }
 
 .timeline { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .timeline > * { position: relative; border-top: 3px solid var(--accent); }
-.projects > :first-child { grid-column: 1 / -1; }
 .points { margin: 14px 0 0; padding-left: 18px; color: var(--muted); font-size: 15px; display: grid; gap: 6px; }
 .points li::marker { color: var(--accent); }
 .project-link { display: inline-flex; margin-top: 14px; font-size: 14px; font-weight: 500; color: var(--accent); }

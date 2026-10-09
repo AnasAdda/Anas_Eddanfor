@@ -52,10 +52,14 @@ export const experience = [
 export const projects = [
   {
     name: 'ESP failure prediction', org: 'Samsung Innovation Campus · AI capstone', url: 'https://github.com/AnasAdda/Data-Drillers',
-    text: 'Team "Data Drillers": a two-stage ML pipeline (scikit-learn, XGBoost) that predicts oil-well pump shutdowns from 1-minute SCADA data, names the failure mode, and recommends a safe operating frequency. On held-out wells it caught 48% of shutdowns with a median 180-minute warning.',
+    text: 'Team "Data Drillers": an ML pipeline (scikit-learn, XGBoost) that predicts oil-well pump shutdowns from SCADA data and names the failure mode. On held-out wells it caught 48% of shutdowns with a median 180-minute warning.',
   },
   {
-    name: 'Online registration platform', org: 'LATI', url: 'https://register.lati.ly/',
+    name: 'Machine predictive maintenance', org: 'Personal project · Machine learning', url: 'https://github.com/AnasAdda/Predictive-Maintenance-ML',
+    text: 'Classifies machine failure types from 10,000 records of operating data such as temperature, speed, torque and tool wear. Of four models compared, Random Forest reached 98.6% test accuracy, with per-class recall checked because failures are rare.',
+  },
+  {
+    name: 'Online registration platform', org: 'LATI',
     text: 'Lets individuals register for the academy\'s training programs online, making it easier to collect applicant information and follow up with registrants.',
   },
   {
