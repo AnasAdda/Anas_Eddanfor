@@ -67,7 +67,7 @@ export default function App() {
         </Section>
 
         <Section id="projects" index="03" title="Projects">
-          <div className="timeline">
+          <div className="timeline projects">
             {projects.map(p => (
               <article key={p.name} className="card">
                 <p className="label">{p.org}</p>

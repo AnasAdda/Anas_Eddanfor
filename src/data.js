@@ -1,7 +1,7 @@
 import { topLevelCount } from './lib/useCertificates.js';
 
 export const profile = {
-  name: 'Anas M. Eddanfor',
+  name: 'Anas Mokhtar Eddanfor',
   location: 'Misurata, Libya',
   email: 'anas.addanfor@gmail.com',
   linkedin: 'https://www.linkedin.com/in/anas-eddanfor-bb068420b/',
@@ -50,6 +50,10 @@ export const experience = [
 ];
 
 export const projects = [
+  {
+    name: 'ESP failure prediction', org: 'Samsung Innovation Campus · AI capstone', url: 'https://github.com/AnasAdda/Data-Drillers',
+    text: 'Team "Data Drillers": a two-stage ML pipeline (scikit-learn, XGBoost) that predicts oil-well pump shutdowns from 1-minute SCADA data, names the failure mode, and recommends a safe operating frequency. On held-out wells it caught 48% of shutdowns with a median 180-minute warning.',
+  },
   {
     name: 'Online registration platform', org: 'LATI', url: 'https://register.lati.ly/',
     text: 'Lets individuals register for the academy\'s training programs online, making it easier to collect applicant information and follow up with registrants.',
