@@ -28,7 +28,7 @@ export default function ContactForm() {
   if (status === 'sent') {
     return (
       <div className="form-done" role="status">
-        <span className="done-icon">✓</span>
+        <span className="done-icon"><Icon name="check" size={26} /></span>
         <h3>Message sent</h3>
         <p className="muted">Thanks for reaching out. I'll get back to you soon.</p>
         <button className="btn" onClick={() => setStatus('idle')}>Send another</button>

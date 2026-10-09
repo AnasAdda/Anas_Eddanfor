@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import useCertificates from '../lib/useCertificates.js';
+import Icon from './Icon.jsx';
 
 const CATEGORIES = ['All', 'AI & Data', 'Cloud & Infrastructure', 'Networking', 'Programming', 'Engineering', 'Language'];
 
@@ -59,7 +60,7 @@ export default function Certificates() {
                 {c.credential_id && <p className="cred">ID {c.credential_id}</p>}
                 <div className="cert-links">
                   {file && <a href={file} target="_blank" rel="noopener noreferrer">View certificate</a>}
-                  {verify && <a href={verify} target="_blank" rel="noopener noreferrer">Verify ↗</a>}
+                  {verify && <a href={verify} target="_blank" rel="noopener noreferrer">Verify <Icon name="external" size={14} /></a>}
                 </div>
                 {subs && (
                   <div className="subs">

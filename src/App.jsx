@@ -73,7 +73,7 @@ export default function App() {
                 <p className="label">{p.org}</p>
                 <h3>{p.name}</h3>
                 <p className="muted">{p.text}</p>
-                {p.url && <a className="project-link" href={p.url} target="_blank" rel="noopener noreferrer">{p.url.replace(/^https:\/\/|\/$/g, '')} ↗</a>}
+                {p.url && <a className="project-link" href={p.url} target="_blank" rel="noopener noreferrer">{p.url.replace(/^https:\/\/|\/$/g, '')} <Icon name="external" size={14} /></a>}
               </article>
             ))}
           </div>
