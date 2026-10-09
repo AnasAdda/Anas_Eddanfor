@@ -129,7 +129,7 @@ export default function App() {
                 <a href={`mailto:${profile.email}`}><Icon name="mail" size={18} />{profile.email}</a>
                 <a href={profile.linkedin} target="_blank" rel="noopener noreferrer"><Icon name="linkedin" size={18} />LinkedIn</a>
                 <a href={profile.github} target="_blank" rel="noopener noreferrer"><Icon name="code" size={18} />GitHub</a>
-                <a href={profile.cv} download><Icon name="arrow" size={18} />Download CV</a>
+                <a href={profile.cv} download="Anas_Eddanfor_CV.pdf"><Icon name="arrow" size={18} />Download CV</a>
               </div>
             </div>
             <ContactForm />

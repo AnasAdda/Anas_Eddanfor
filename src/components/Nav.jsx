@@ -22,7 +22,7 @@ export default function Nav({ dark, onToggleTheme }) {
         <button className="icon-btn" onClick={onToggleTheme} aria-label="Toggle dark mode">
           <Icon name={dark ? 'sun' : 'moon'} size={16} />
         </button>
-        <a className="btn small primary nav-cta" href={profile.cv} download>Download CV</a>
+        <a className="btn small primary nav-cta" href={profile.cv} download="Anas_Eddanfor_CV.pdf">Download CV</a>
       </div>
     </header>
   );

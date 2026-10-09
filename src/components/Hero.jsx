@@ -19,7 +19,7 @@ export default function Hero() {
           </ul>
           <div className="cta">
             <a className="btn primary" href="#contact"><Icon name="mail" size={18} />Get in touch</a>
-            <a className="btn" href={profile.cv} download>Download CV <Icon name="arrow" size={16} /></a>
+            <a className="btn" href={profile.cv} download="Anas_Eddanfor_CV.pdf">Download CV <Icon name="arrow" size={16} /></a>
           </div>
         </div>
         <div className="hero-photo">
