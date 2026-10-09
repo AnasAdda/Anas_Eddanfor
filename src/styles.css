@@ -213,7 +213,11 @@ img { max-width: 100%; display: block; }
 .feature-side { border-left: 1px solid var(--border); padding-left: 32px; }
 
 .timeline { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.timeline li { position: relative; border-top: 3px solid var(--accent); }
+.timeline > * { position: relative; border-top: 3px solid var(--accent); }
+.points { margin: 14px 0 0; padding-left: 18px; color: var(--muted); font-size: 15px; display: grid; gap: 6px; }
+.points li::marker { color: var(--accent); }
+.project-link { display: inline-block; margin-top: 14px; font-size: 14px; font-weight: 500; color: var(--accent); }
+.project-link:hover { text-decoration: underline; }
 
 .skills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .icon {

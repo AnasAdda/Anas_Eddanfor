@@ -7,7 +7,7 @@ import { LogoFull } from './components/Logo.jsx';
 import ContactForm from './components/ContactForm.jsx';
 import Certificates from './components/Certificates.jsx';
 import {
-  profile, education, experience, skills, softSkills,
+  profile, education, experience, projects, skills, softSkills,
   languages, interests,
 } from './data.js';
 
@@ -58,12 +58,28 @@ export default function App() {
                 <p className="label">{job.period}</p>
                 <h3>{job.role}</h3>
                 <p className="muted">{job.org}</p>
+                <ul className="points">
+                  {job.points.map(p => <li key={p}>{p}</li>)}
+                </ul>
               </li>
             ))}
           </ol>
         </Section>
 
-        <Section id="skills" index="03" title="Skills">
+        <Section id="projects" index="03" title="Projects">
+          <div className="timeline">
+            {projects.map(p => (
+              <article key={p.name} className="card">
+                <p className="label">{p.org}</p>
+                <h3>{p.name}</h3>
+                <p className="muted">{p.text}</p>
+                {p.url && <a className="project-link" href={p.url} target="_blank" rel="noopener noreferrer">{p.url.replace(/^https:\/\/|\/$/g, '')} ↗</a>}
+              </article>
+            ))}
+          </div>
+        </Section>
+
+        <Section id="skills" index="04" title="Skills">
           <div className="skills">
             {skills.map(group => (
               <article key={group.title} className="card">
@@ -78,13 +94,13 @@ export default function App() {
           <p className="soft">+ {softSkills.join(' · ')}</p>
         </Section>
 
-        <Section id="certificates" index="04" title="Certificates">
+        <Section id="certificates" index="05" title="Certificates">
           <Certificates />
         </Section>
 
         <Section className="two-col">
           <div>
-            <header className="section-head"><span className="idx">05</span><h2>Languages</h2><span className="rule" /></header>
+            <header className="section-head"><span className="idx">06</span><h2>Languages</h2><span className="rule" /></header>
             <div className="card langs">
               {languages.map(l => (
                 <div key={l.name}>
@@ -95,7 +111,7 @@ export default function App() {
             </div>
           </div>
           <div>
-            <header className="section-head"><span className="idx">06</span><h2>Interests</h2><span className="rule" /></header>
+            <header className="section-head"><span className="idx">07</span><h2>Interests</h2><span className="rule" /></header>
             <ul className="tags big">
               {interests.map(i => <li key={i}>{i}</li>)}
             </ul>
@@ -111,6 +127,8 @@ export default function App() {
               <p className="muted">Open to roles in automation, data center infrastructure and design. Send a message here or reach me directly.</p>
               <div className="contact-links">
                 <a href={`mailto:${profile.email}`}><Icon name="mail" size={18} />{profile.email}</a>
+                <a href={profile.linkedin} target="_blank" rel="noopener noreferrer"><Icon name="linkedin" size={18} />LinkedIn</a>
+                <a href={profile.github} target="_blank" rel="noopener noreferrer"><Icon name="code" size={18} />GitHub</a>
                 <a href={profile.cv} download><Icon name="arrow" size={18} />Download CV</a>
               </div>
             </div>
@@ -121,7 +139,7 @@ export default function App() {
 
       <footer className="wrap footer">
         <LogoFull className="logo-full" />
-        <p>© {new Date().getFullYear()} Anas Eddanfor</p>
+        <p>© {new Date().getFullYear()} {profile.name}</p>
       </footer>
     </>
   );

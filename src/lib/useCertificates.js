@@ -12,7 +12,7 @@ export default function useCertificates() {
     let cancelled = false;
     supabase
       .from('certificates')
-      .select('slug, title, issuer, category, issued_on, credential_id, verify_url, file_path, details, parent_slug, sort_order')
+      .select('slug, title, issuer, category, issued_on, date_precision, credential_id, verify_url, file_path, details, parent_slug, sort_order')
       .order('sort_order')
       .then(({ data, error }) => {
         if (!cancelled && !error && data?.length) setRows(data);

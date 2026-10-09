@@ -3,8 +3,10 @@ import useCertificates from '../lib/useCertificates.js';
 
 const CATEGORIES = ['All', 'AI & Data', 'Cloud & Infrastructure', 'Networking', 'Programming', 'Engineering', 'Language'];
 
-const fmtDate = iso =>
-  new Date(`${iso}T00:00:00`).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
+const fmtDate = (iso, precision) =>
+  precision === 'year'
+    ? iso.slice(0, 4)
+    : new Date(`${iso}T00:00:00`).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
 
 // Only follow links we expect: site-relative certificate files and https verify pages.
 const safeFile = p => (p && /^certificates\/[a-z0-9-]+\.(pdf|jpg|png)$/.test(p) ? p : null);
@@ -51,7 +53,7 @@ export default function Certificates() {
                 <p className="issuer">{c.issuer}</p>
                 <h3>{c.title}</h3>
                 <p className="meta">
-                  {fmtDate(c.issued_on)}
+                  {fmtDate(c.issued_on, c.date_precision)}
                   {c.details && <> · {c.details}</>}
                 </p>
                 {c.credential_id && <p className="cred">ID {c.credential_id}</p>}
@@ -70,7 +72,7 @@ export default function Certificates() {
                         {subs.map(s => (
                           <li key={s.slug}>
                             <a href={safeFile(s.file_path) || undefined} target="_blank" rel="noopener noreferrer">{s.title}</a>
-                            <span>{fmtDate(s.issued_on)}</span>
+                            <span>{fmtDate(s.issued_on, s.date_precision)}</span>
                           </li>
                         ))}
                       </ol>

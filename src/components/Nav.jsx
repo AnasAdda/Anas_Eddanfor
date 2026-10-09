@@ -5,6 +5,7 @@ import { profile } from '../data.js';
 const links = [
   ['education', 'Education'],
   ['experience', 'Experience'],
+  ['projects', 'Projects'],
   ['skills', 'Skills'],
   ['certificates', 'Certificates'],
   ['contact', 'Contact'],

@@ -25,7 +25,7 @@ export default function Hero() {
         <div className="hero-photo">
           <div className="orbit orbit-1" aria-hidden="true"><i /></div>
           <div className="orbit orbit-2" aria-hidden="true"><i /></div>
-          <img src={profile.photo} alt="Portrait of Anas Eddanfor" width="594" height="596" />
+          <img src={profile.photo} alt="Portrait of Anas M. Eddanfor" width="594" height="596" />
         </div>
       </div>
       <div className="wrap">
