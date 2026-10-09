@@ -1,12 +1,12 @@
 :root {
-  --accent: #1b3a6b;
+  --accent: #222161;
   --accent-soft: #e9eff8;
-  --navy: #0f2447;
+  --navy: #222161;
   --on-navy: #ffffff;
   --on-accent: #ffffff;
   --bg: #ffffff;
   --surface: #ffffff;
-  --text: #13213b;
+  --text: #16163f;
   --muted: #56627a;
   --border: #dce3ee;
   --shadow: 0 1px 2px rgba(15,36,71,.05), 0 8px 24px rgba(15,36,71,.07);
@@ -14,27 +14,27 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --accent: #9dbcf0;
-    --accent-soft: #1a3060;
-    --on-accent: #0c1d3b;
-    --navy: #0a1a36;
-    --bg: #0c1d3b;
-    --surface: #12274d;
+    --accent: #b3b8f5;
+    --accent-soft: #26266a;
+    --on-accent: #121240;
+    --navy: #16154a;
+    --bg: #121240;
+    --surface: #1b1b55;
     --text: #ffffff;
-    --muted: #b4c2dc;
-    --border: #22396a;
+    --muted: #bcc0e0;
+    --border: #2c2c6e;
     --shadow: none;
   }
 }
 :root[data-theme="dark"] {
-  --accent: #9dbcf0;
-  --accent-soft: #1a3060;
-  --navy: #0a1a36;
-  --bg: #0c1d3b;
-  --surface: #12274d;
+  --accent: #b3b8f5;
+  --accent-soft: #26266a;
+  --navy: #16154a;
+  --bg: #121240;
+  --surface: #1b1b55;
   --text: #ffffff;
-  --muted: #b4c2dc;
-  --border: #22396a;
+  --muted: #bcc0e0;
+  --border: #2c2c6e;
   --shadow: none;
 }
 
@@ -60,7 +60,8 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid rgba(255,255,255,.12);
 }
 .nav-inner { display: flex; align-items: center; gap: 24px; height: 60px; }
-.brand { font-family: Sora, sans-serif; font-weight: 700; color: var(--on-navy); text-decoration: none; font-size: 20px; }
+.brand { color: var(--on-navy); display: flex; align-items: center; }
+.logo-mark { height: 28px; width: auto; display: block; }
 .nav nav { display: flex; gap: 20px; margin-left: auto; }
 .nav nav a { text-decoration: none; color: rgba(255,255,255,.75); font-size: 14px; font-weight: 500; }
 .nav nav a:hover { color: var(--on-navy); }
@@ -147,6 +148,7 @@ img { max-width: 100%; display: block; }
 .plain li { padding: 6px 0; display: flex; gap: 10px; }
 
 .contact p { margin: 0 0 16px; }
+.logo-full { height: 64px; width: auto; margin: 0 auto 12px; display: block; color: var(--accent); }
 .footer { padding-top: 32px; padding-bottom: 40px; color: var(--muted); font-size: 14px; text-align: center; }
 
 @media (max-width: 760px) {
