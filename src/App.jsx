@@ -4,6 +4,7 @@ import Hero from './components/Hero.jsx';
 import Section from './components/Section.jsx';
 import Icon from './components/Icon.jsx';
 import { LogoFull } from './components/Logo.jsx';
+import ContactForm from './components/ContactForm.jsx';
 import {
   profile, education, experience, skills, softSkills,
   certificates, languages, interests,
@@ -110,13 +111,16 @@ export default function App() {
         <Section id="contact">
           <div className="contact">
             <div className="grid-bg" aria-hidden="true" />
-            <p className="label">Contact</p>
-            <h2>Let's build something reliable.</h2>
-            <p className="muted">Open to roles in automation, data center infrastructure and design.</p>
-            <div className="cta">
-              <a className="btn primary" href={`mailto:${profile.email}`}><Icon name="mail" size={18} />{profile.email}</a>
-              <a className="btn" href={profile.cv} download>Download CV <Icon name="arrow" size={16} /></a>
+            <div className="contact-intro">
+              <p className="label">Contact</p>
+              <h2>Let's build something reliable.</h2>
+              <p className="muted">Open to roles in automation, data center infrastructure and design. Send a message here or reach me directly.</p>
+              <div className="contact-links">
+                <a href={`mailto:${profile.email}`}><Icon name="mail" size={18} />{profile.email}</a>
+                <a href={profile.cv} download><Icon name="arrow" size={18} />Download CV</a>
+              </div>
             </div>
+            <ContactForm />
           </div>
         </Section>
       </main>
