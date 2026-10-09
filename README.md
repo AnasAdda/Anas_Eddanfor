@@ -22,6 +22,9 @@ All text (experience, skills, certificates and so on) lives in `src/data.js`. Th
 
 ## Backend (Supabase)
 
+Certificates live in the `certificates` table (public read-only). The site renders the bundled `src/certificates.json` instantly and then loads the live rows from Supabase, so to add a certificate: put the file in `public/certificates/`, a 480px thumbnail in `public/certificates/thumbs/<slug>.jpg`, and insert a row (also add it to `src/certificates.json` as the offline fallback).
+
+
 The contact form saves messages to the `contact_messages` table in the Supabase project `Anas_Eddanfor`. Visitors can only insert; reading happens in the Supabase dashboard (**Table Editor → contact_messages**). The schema is in `supabase/migrations/`.
 
 The client lives in `src/lib/supabase.js`. The project URL and publishable key are built in and can be overridden with `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` in a local `.env`.

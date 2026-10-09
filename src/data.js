@@ -1,3 +1,5 @@
+import { topLevelCount } from './lib/useCertificates.js';
+
 export const profile = {
   name: 'Anas Mokhtar Eddanfor',
   location: 'Misurata, Libya',
@@ -13,7 +15,7 @@ export const profile = {
 export const stats = [
   { label: 'Experience', value: '5+', unit: 'yrs' },
   { label: 'GPA', value: '3.58', unit: '/4' },
-  { label: 'Certificates', value: '7' },
+  { label: 'Certificates', value: String(topLevelCount) },
   { label: 'Languages', value: 'AR · EN' },
 ];
 
@@ -40,16 +42,6 @@ export const skills = [
 ];
 
 export const softSkills = ['Analytical problem solving', 'Teamwork', 'Adaptability'];
-
-export const certificates = [
-  { name: 'VCTA-DCV Certificate', issuer: 'VMware' },
-  { name: 'DCV CTS: Data Center Virtualization Core Technical Skills', issuer: 'VMware' },
-  { name: 'VMware Bootcamp', issuer: 'LATI' },
-  { name: 'CCNAv7: Introduction to Networks', issuer: 'Cisco Networking Academy' },
-  { name: 'HCIA AI Training Course', issuer: 'Huawei Learning' },
-  { name: 'Python for Everybody Specialization', issuer: 'University of Michigan' },
-  { name: 'Research and Development Training Program', issuer: 'Lamah Technologies' },
-];
 
 export const languages = [
   { name: 'Arabic', level: 'Native', pct: 100 },

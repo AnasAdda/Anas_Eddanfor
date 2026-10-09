@@ -5,9 +5,10 @@ import Section from './components/Section.jsx';
 import Icon from './components/Icon.jsx';
 import { LogoFull } from './components/Logo.jsx';
 import ContactForm from './components/ContactForm.jsx';
+import Certificates from './components/Certificates.jsx';
 import {
   profile, education, experience, skills, softSkills,
-  certificates, languages, interests,
+  languages, interests,
 } from './data.js';
 
 function useTheme() {
@@ -78,14 +79,7 @@ export default function App() {
         </Section>
 
         <Section id="certificates" index="04" title="Certificates">
-          <ul className="certs">
-            {certificates.map(c => (
-              <li key={c.name} className="card">
-                <span className="issuer">{c.issuer}</span>
-                <strong>{c.name}</strong>
-              </li>
-            ))}
-          </ul>
+          <Certificates />
         </Section>
 
         <Section className="two-col">
