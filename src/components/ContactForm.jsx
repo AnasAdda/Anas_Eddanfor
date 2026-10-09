@@ -6,7 +6,7 @@ const empty = { name: '', email: '', message: '', website: '' };
 
 export default function ContactForm() {
   const [form, setForm] = useState(empty);
-  const [status, setStatus] = useState('idle'); // idle | sending | sent | error
+  const [status, setStatus] = useState('idle'); // idle | sending | sent | error | limited
 
   const update = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
 
@@ -20,7 +20,7 @@ export default function ContactForm() {
       email: form.email.trim(),
       message: form.message.trim(),
     });
-    if (error) return setStatus('error');
+    if (error) return setStatus(/too many/i.test(error.message) ? 'limited' : 'error');
     setForm(empty);
     setStatus('sent');
   }
@@ -53,6 +53,7 @@ export default function ContactForm() {
         <textarea name="message" value={form.message} onChange={update} required maxLength={5000} rows={5} />
       </label>
       <input className="hp" name="website" value={form.website} onChange={update} tabIndex={-1} autoComplete="off" aria-hidden="true" />
+      {status === 'limited' && <p className="form-error" role="alert">You've sent several messages already. Please try again in a few minutes.</p>}
       {status === 'error' && <p className="form-error" role="alert">Something went wrong. Please try again or email me directly.</p>}
       <button className="btn primary" type="submit" disabled={status === 'sending'}>
         <Icon name="mail" size={18} />{status === 'sending' ? 'Sending…' : 'Send message'}
