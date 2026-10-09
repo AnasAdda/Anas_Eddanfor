@@ -2,6 +2,20 @@
 
 Personal CV and portfolio website of Anas Mokhtar Eddanfor, Control & Automation Engineer, Data Center Engineer and graphic designer.
 
-A static site (`index.html` + `style.css`, no build step). To publish it with GitHub Pages: **Settings → Pages → Deploy from a branch → `main` / root**.
+Built with React and Vite, set in Thmanyah Sans.
 
-The downloadable CV lives at `assets/Anas_Eddanfor_CV.pdf`.
+## Run locally
+
+```bash
+npm install
+npm run dev      # local dev server
+npm run build    # production build in dist/
+```
+
+## Edit content
+
+All text (experience, skills, certificates and so on) lives in `src/data.js`. The photo, CV PDF and logo are in `public/assets/`.
+
+## Publish
+
+`.github/workflows/deploy.yml` builds the site and deploys it to GitHub Pages on every push to `main`. One-time setup: **Settings → Pages → Source: GitHub Actions**.
