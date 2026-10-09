@@ -1,5 +1,5 @@
 import Icon from './Icon.jsx';
-import { profile, stats, education, certificates } from '../data.js';
+import { profile, stats } from '../data.js';
 
 export default function Hero() {
   const [first, ...rest] = profile.name.split(' ');
@@ -22,11 +22,9 @@ export default function Hero() {
           </div>
         </div>
         <div className="hero-photo">
-          <div className="photo-frame">
-            <img src={profile.photo} alt="Portrait of Anas Eddanfor" width="594" height="596" />
-          </div>
-          <div className="chip chip-a"><span>GPA</span>{education.gpa}</div>
-          <div className="chip chip-b"><span>Certificates</span>{certificates.length} earned</div>
+          <div className="orbit orbit-1" aria-hidden="true"><i /></div>
+          <div className="orbit orbit-2" aria-hidden="true"><i /></div>
+          <img src={profile.photo} alt="Portrait of Anas Eddanfor" width="594" height="596" />
         </div>
       </div>
       <div className="wrap">
