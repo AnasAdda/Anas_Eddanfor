@@ -158,7 +158,7 @@ img { max-width: 100%; display: block; }
   display: grid; place-items: center;
 }
 .hero-photo img {
-  position: relative; z-index: 1; width: 78%; height: auto; aspect-ratio: 1; object-fit: cover; object-position: 50% 20%; border-radius: 50%;
+  position: relative; z-index: 1; width: 78%; height: auto; aspect-ratio: 1; object-fit: cover; object-position: 50% 30%; border-radius: 50%;
   box-shadow: 0 0 0 8px var(--surface), 0 0 0 9px var(--border), 0 30px 60px -20px rgba(34,33,97,.35);
 }
 .orbit {
