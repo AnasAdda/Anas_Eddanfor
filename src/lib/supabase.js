@@ -8,3 +8,7 @@ const key = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY ?? 'sb_publishable_ApP
 export const supabase = createClient(url, key, {
   auth: { persistSession: false },
 });
+
+// Certificate files live in the public `certificates` storage bucket. Paths in the
+// certificates table look like `certificates/<file>`, i.e. bucket name then object path.
+export const storageUrl = path => `${url}/storage/v1/object/public/${path}`;

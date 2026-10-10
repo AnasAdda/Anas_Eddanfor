@@ -22,7 +22,7 @@ All text (experience, skills, certificates and so on) lives in `src/data.js`. Th
 
 ## Backend (Supabase)
 
-Certificates live in the `certificates` table (public read-only). The site renders the bundled `src/certificates.json` instantly and then loads the live rows from Supabase, so to add a certificate: put the file in `public/certificates/`, a 480px thumbnail in `public/certificates/thumbs/<slug>.jpg`, and insert a row (also add it to `src/certificates.json` as the offline fallback).
+Certificates live in the `certificates` table (public read-only). The site renders the bundled `src/certificates.json` instantly and then loads the live rows from Supabase, so to add a certificate: upload the file to the `certificates` storage bucket in Supabase (Storage → certificates) and a 480px thumbnail to `thumbs/<slug>.jpg` in the same bucket, then insert a row whose `file_path` is `certificates/<file>` (also add it to `src/certificates.json` as the offline fallback). The bucket is public for reading by URL only; there are no storage policies, so nobody can list, upload or delete files through the API.
 
 
 The contact form saves messages to the `contact_messages` table in the Supabase project `Anas_Eddanfor`. Visitors can only insert; reading happens in the Supabase dashboard (**Table Editor → contact_messages**). The schema is in `supabase/migrations/`.

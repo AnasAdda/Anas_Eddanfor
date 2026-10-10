@@ -9,7 +9,8 @@ const csp = [
   "default-src 'self'",
   "script-src 'self'",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data:",
+  // Certificate thumbnails come from the public certificates bucket only.
+  `img-src 'self' data: ${SUPABASE_URL}/storage/v1/object/public/certificates/`,
   "font-src 'self'",
   `connect-src 'self' ${SUPABASE_URL}`,
   "object-src 'none'",

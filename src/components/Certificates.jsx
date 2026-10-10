@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import useCertificates from '../lib/useCertificates.js';
 import Icon from './Icon.jsx';
+import { storageUrl } from '../lib/supabase.js';
 
 const CATEGORIES = ['All', 'AI & Data', 'Cloud & Infrastructure', 'Networking', 'Programming', 'Engineering', 'Language'];
 
@@ -9,8 +10,8 @@ const fmtDate = (iso, precision) =>
     ? iso.slice(0, 4)
     : new Date(`${iso}T00:00:00`).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
 
-// Only follow links we expect: site-relative certificate files and https verify pages.
-const safeFile = p => (p && /^certificates\/[a-z0-9-]+\.(pdf|jpg|png)$/.test(p) ? p : null);
+// Only follow links we expect: files in the certificates bucket and https verify pages.
+const safeFile = p => (p && /^certificates\/[a-z0-9-]+\.(pdf|jpg|png)$/.test(p) ? storageUrl(p) : null);
 const safeUrl = u => (u && /^https:\/\//.test(u) ? u : null);
 
 export default function Certificates() {
@@ -47,7 +48,7 @@ export default function Certificates() {
           return (
             <li key={c.slug} className="cert-card">
               <a className="thumb" href={file || undefined} target="_blank" rel="noopener noreferrer" tabIndex={file ? 0 : -1}>
-                <img src={`certificates/thumbs/${c.slug}.jpg`} alt="" loading="lazy" width="480" height="340" />
+                <img src={storageUrl(`certificates/thumbs/${c.slug}.jpg`)} alt="" loading="lazy" width="480" height="340" />
                 <span className="cat">{c.category}</span>
               </a>
               <div className="cert-body">
