@@ -11,7 +11,8 @@ const fmtDate = (iso, precision) =>
     : new Date(`${iso}T00:00:00`).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
 
 // Only follow links we expect: files in the certificates bucket and https verify pages.
-const safeFile = p => (p && /^certificates\/[a-z0-9-]+\.(pdf|jpg|png)$/.test(p) ? storageUrl(p) : null);
+// ?v= changes when a certificate is updated, so browsers drop a cached old file.
+const safeFile = (p, v) => (p && /^certificates\/[a-z0-9-]+\.(pdf|jpg|png)$/.test(p) ? storageUrl(`${p}?v=${v}`) : null);
 const safeUrl = u => (u && /^https:\/\//.test(u) ? u : null);
 
 export default function Certificates() {
@@ -42,13 +43,13 @@ export default function Certificates() {
 
       <ul className="cert-grid">
         {shown.map(c => {
-          const file = safeFile(c.file_path);
+          const file = safeFile(c.file_path, c.issued_on);
           const verify = safeUrl(c.verify_url);
           const subs = children[c.slug];
           return (
             <li key={c.slug} className="cert-card">
               <a className="thumb" href={file || undefined} target="_blank" rel="noopener noreferrer" tabIndex={file ? 0 : -1}>
-                <img src={storageUrl(`certificates/thumbs/${c.slug}.jpg`)} alt="" loading="lazy" width="480" height="340" />
+                <img src={storageUrl(`certificates/thumbs/${c.slug}.jpg?v=${c.issued_on}`)} alt="" loading="lazy" width="480" height="340" />
                 <span className="cat">{c.category}</span>
               </a>
               <div className="cert-body">
@@ -73,7 +74,7 @@ export default function Certificates() {
                       <ol>
                         {subs.map(s => (
                           <li key={s.slug}>
-                            <a href={safeFile(s.file_path) || undefined} target="_blank" rel="noopener noreferrer">{s.title}</a>
+                            <a href={safeFile(s.file_path, s.issued_on) || undefined} target="_blank" rel="noopener noreferrer">{s.title}</a>
                             <span>{fmtDate(s.issued_on, s.date_precision)}</span>
                           </li>
                         ))}
