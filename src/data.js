@@ -7,7 +7,7 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/anas-eddanfor-bb068420b/',
   github: 'https://github.com/AnasAdda',
   cv: 'assets/Anas_Eddanfor_CV.pdf',
-  photo: 'assets/profile.jpg',
+  photo: 'assets/profile-2026-10.jpg',
   heroBg: 'assets/hero-bg.jpg',
   roles: ['Control & Automation', 'Data Center', 'Marketing & Design'],
   intro:
